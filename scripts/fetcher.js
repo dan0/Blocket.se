@@ -145,7 +145,7 @@ define(['http', 'cheerio'], function(http, $) {
       _body = '';
       _self.stop();
       _intervalId = setTimeout(_fetch, interval);
-      _self.trigger('error');
+      _trigger('error');
     };
 
     /**

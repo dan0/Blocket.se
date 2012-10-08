@@ -108,7 +108,7 @@ define(['http', 'cheerio', 'iconv'], function(http, $, Iconv) {
     var _onFetchError = function(e) {
       console.log('Got error while trying to load the details page: ' + e.message);
       _body = '';
-      _self.trigger('error');
+      _trigger('error');
     };
 
     /**
