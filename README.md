@@ -1,7 +1,7 @@
 Blocket.se
 ==========
 
-Checks Blocket for new ads and sends an email.
+This is a NodeJS script that checks Blocket for new ads and sends an email.
 
 How to use
 ==========
@@ -24,6 +24,8 @@ Go into the Blocket.se and run **node main.js**
 
 Dependencies
 ==========
+
+This is a NodeJS script so you need NodeJS installed on your computer.
 
 These packages are required in order for you to run the script
 
