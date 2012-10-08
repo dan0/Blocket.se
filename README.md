@@ -20,7 +20,7 @@ and then copy the url and add it in the urls array.
 How to run
 ==========
 
-Go into the Blocket.se and run **node main.js**
+Go into the Blocket.se folder and run **node main.js**
 
 Dependencies
 ==========
