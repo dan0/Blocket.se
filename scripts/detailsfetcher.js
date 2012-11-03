@@ -1,4 +1,4 @@
-define(['http', 'cheerio', 'iconv'], function(http, $, Iconv) {
+define(['http', 'cheerio', 'iconv', 'utilities'], function(http, $, Iconv, Utilities) {
 
   /**
    * Responsible for fetching the details
@@ -119,7 +119,15 @@ define(['http', 'cheerio', 'iconv'], function(http, $, Iconv) {
      * @function
      */
     var _fetch = function() {
-      http.get(url, _onFetchSuccess).on('error', _onFetchError);
+      var parsedUrl = Utilities.parseURL(url);
+      var options = {
+        host: parsedUrl.domain,
+        port: 80,
+        path: '/' + parsedUrl.path + '?' + parsedUrl.query,
+        headers: Utilities.getRandomHeaders()
+      };
+
+      http.get(options, _onFetchSuccess).on('error', _onFetchError);
     };
 
     /**

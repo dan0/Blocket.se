@@ -1,4 +1,4 @@
-define(['http', 'cheerio'], function(http, $) {
+define(['http', 'cheerio', 'utilities'], function(http, $, Utilities) {
 
   /**
    * Responsible for fetching a page at custom interval
@@ -12,6 +12,7 @@ define(['http', 'cheerio'], function(http, $) {
 
     /**
      * The interval id of the timeouts
+     *
      * @private
      * @type {Object}
      */
@@ -144,7 +145,7 @@ define(['http', 'cheerio'], function(http, $) {
       console.log('Got error ' + e.message, 'from', url);
       _body = '';
       _self.stop();
-      _intervalId = setTimeout(_fetch, interval);
+      _intervalId = setTimeout(_fetch, interval - 4 + Math.floor(Math.random() * 8));
       _trigger('error');
     };
 
@@ -156,10 +157,17 @@ define(['http', 'cheerio'], function(http, $) {
      * @function
      */
     var _fetch = function() {
+      var parsedUrl = Utilities.parseURL(url);
+      var options = {
+        host: parsedUrl.domain,
+        port: 80,
+        path: '/' + parsedUrl.path + '?' + parsedUrl.query,
+        headers: Utilities.getRandomHeaders()
+      };
       console.log('-------------------------------------------');
       console.log('Fetching', url + '...');
       console.log('-------------------------------------------');
-      http.get(url, _onFetchSuccess).on('error', _onFetchError);
+      http.get(options, _onFetchSuccess).on('error', _onFetchError);
     };
 
     /**
