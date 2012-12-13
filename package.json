@@ -21,7 +21,7 @@
     "cheerio" : "0.10.3",
     "emailjs" : "0.3.3",
     "node-gyp" : "0.8.1",
-    "iconv" : "0.1.2"
+    "iconv" : "1.2.4"
   },
   "license": "MIT",
   "engines": {
