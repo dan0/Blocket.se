@@ -1,0 +1,30 @@
+{
+  "name": "Blocket.se",
+  "version": "0.1.0",
+  "author": "Thodoris Tsiridis  <info@72lions.com>",
+  "description": "A scraper for Blocket.se",
+  "contributors": [ 
+    {
+      "name": "Dan Drayne",
+      "email": "dan@allbutlost.com"
+    } 
+  ],
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/72lions/Blocket.se.git"
+  },
+  "dependencies" : {
+    "requirejs" : "2.1.2",
+    "cheerio" : "0.10.3",
+    "emailjs" : "0.3.3",
+    "node-gyp" : "0.8.1",
+    "iconv" : "0.1.2"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
