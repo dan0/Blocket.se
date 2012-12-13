@@ -41,7 +41,7 @@ requirejs(['fetcher', 'detailsfetcher', 'email', 'formatter', 'fs'], function(Fe
 
         if (total === 0) {
           var email = new Emailer(config.email.username, config.email.password, config.email.host, config.email.ssl);
-          email.send('info@72lions.com', 'New ads where found', body);
+          email.send(config.recipient, 'New ads were found', body);
         }
 
       }).on('error', function(e) {

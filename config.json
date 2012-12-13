@@ -4,6 +4,7 @@
     "http://www.blocket.se/stockholm/lagenheter?ca=9&cg=3020&st=u&w=111&mre=15&ros=3&m=131",
     "http://www.blocket.se/stockholm?q=&cg=5020&w=1&st=s&c=0&ca=11&l=0&md=th&m=131"
   ],
+  "recipient": "youremail@here.com",
   "email": {
     "username": "youremail@email.com",
     "password": "passowrd",
